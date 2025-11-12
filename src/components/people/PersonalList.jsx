@@ -8,7 +8,7 @@ const PersonalList = () => {
   });
   console.log(dutyStore);
   return (
-    <div className='w-80 bg-white overflow-y-auto'>
+    <div className='w-80 bg-gray-200 overflow-y-auto'>
       Personal
     </div>
   )

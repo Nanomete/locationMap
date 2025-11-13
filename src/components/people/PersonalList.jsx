@@ -3,12 +3,12 @@ import useDutyStore from '../../store/useDutyStore'
 
 const PersonalList = () => {
   // zustand store
-  const dutyStore = useDutyStore((state)=> {
-    return state.personal
+  const personnel = useDutyStore((state)=> {
+    return state.personnel
   });
-  console.log(dutyStore);
+  console.log(personnel);
   return (
-    <div className='w-80 bg-white overflow-y-auto'>
+    <div className='w-80 bg-gray-200 overflow-y-auto'>
       Personal
     </div>
   )

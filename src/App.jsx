@@ -3,7 +3,7 @@ import PersonalList from './components/people/PersonalList'
 import Header from './components/layout/Header'
 import MapView from './components/map/MapView'
 import LocationList from './components/locations/LocationList'
-import axios from 'axios'
+// import axios from 'axios'
 import useDutyStore from './store/useDutyStore'
 
 function App() {

@@ -11,9 +11,11 @@ const dutyStore = (set) => ({
     fetchAll: async () => {
         try {
             const personnel = await api.get('/personnel');
+            const locations = await api.get('/locations');
             set({ 
                 // set can assign key in global state
                 personnel:personnel,
+                locations:locations
             })
         } catch (error) {
             console.log(error);

@@ -7,7 +7,7 @@ const LocationList = () => {
   const locations = useDutyStore((state) => {
     return state.locations;
   });
-  console.log(locations);
+  // console.log(locations);
 
   return (
     <div className="w-80 bg-white border-l shadow-lg border-gray-400">

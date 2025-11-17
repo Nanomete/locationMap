@@ -7,7 +7,7 @@ const PersonalList = () => {
   const personnel = useDutyStore((state) => {
     return state.personnel;
   });
-  console.log(personnel);
+  // console.log(personnel);
   return (
     <div className="w-80 bg-white overflow-y-auto">
       {/* text label header of personal list */}

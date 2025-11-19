@@ -5,6 +5,7 @@ import MapView from "./components/map/MapView";
 import LocationList from "./components/locations/LocationList";
 // import axios from 'axios'
 import useDutyStore from "./store/useDutyStore";
+import AddLocationModal from "./components/locations/AddLocationModal";
 
 function App() {
   // js
@@ -41,6 +42,15 @@ function App() {
           <LocationList />
         </div>
       </div>
+
+      {pending && (
+        <AddLocationModal
+          lat={pending.lat}
+          lng={pending.lng}
+          setAdding={setAdding}
+          setPending={setPending}
+        />
+      )}
     </div>
   );
 }

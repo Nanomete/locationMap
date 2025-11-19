@@ -12,7 +12,7 @@ export const api = {
     return data;
   },
   post: async (path, body) => {
-    const { data } = await client.post(path, body);
+    const { data } = await client.post(path, body); // body is object
     return data;
   },
 };

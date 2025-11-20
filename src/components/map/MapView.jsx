@@ -1,7 +1,14 @@
 import React from "react";
-import { MapContainer, useMapEvents } from "react-leaflet";
+import {
+  MapContainer,
+  Marker,
+  Popup,
+  Tooltip,
+  useMapEvents,
+} from "react-leaflet";
 import "leaflet/dist/leaflet.css";
 import Layers from "./Layers";
+import useDutyStore from "../../store/useDutyStore";
 
 const ClickToAdd = (props) => {
   const { adding, onPick } = props;
@@ -21,6 +28,7 @@ const ClickToAdd = (props) => {
 };
 
 const MapView = (props) => {
+  const locations = useDutyStore((s) => s.locations);
   const { adding, onPick } = props;
   const centerSetDefault = [14, 100];
   return (
@@ -35,6 +43,24 @@ const MapView = (props) => {
         <Layers />
 
         <ClickToAdd adding={adding} onPick={onPick} />
+
+        {locations.map((item) => {
+          return (
+            <Marker key={item.id} position={[item.lat, item.lng]}>
+              <Popup>
+                <div className="text-sm">{item.name}</div>
+              </Popup>
+              <Tooltip direction="center">
+                <div className="text-sm">
+                  {item.name}
+                  <div className="text-sm text-gray-500">
+                    {item.lat}, {item.lng}
+                  </div>
+                </div>
+              </Tooltip>
+            </Marker>
+          );
+        })}
       </MapContainer>
     </div>
   );

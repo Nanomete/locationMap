@@ -8,6 +8,11 @@ const LocationList = () => {
     return state.locations;
   });
   // console.log(locations);
+  const onDropToLocation = (e, locationsId) => {
+    const text = e.dataTransfer.getData('text/plain')
+    console.log('text', text)
+    console.log(e, locationsId)
+  }
 
   return (
     <div className="w-80 bg-white border-l shadow-lg border-gray-400">
@@ -26,6 +31,8 @@ const LocationList = () => {
             <div
               className="border-2 border-dashed rounded-md
          border-gray-400 bg-gray-100" key={items.id}
+         onDragOver={(e)=> e.preventDefault()}
+            onDrop={(e)=> onDropToLocation(e, items.id)}
             >
               <div className="flex justify-between p-2">
                 <div className="flex-1">

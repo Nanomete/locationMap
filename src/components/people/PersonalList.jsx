@@ -8,6 +8,12 @@ const PersonalList = () => {
     return state.personnel;
   });
   // console.log(personnel);
+
+  const onDragStart = (e, personId) => {
+    // console.log(e, personId)
+    e.dataTransfer.setData('text/plain', personId)
+  }
+
   return (
     <div className="w-80 bg-white overflow-y-auto">
       {/* text label header of personal list */}
@@ -31,6 +37,8 @@ const PersonalList = () => {
           return (
             <div
               key={item.id}
+              draggable
+              onDragStart={(e)=> onDragStart(e, item.id)}
               className="flex items-center gap-3 p-3 bg-blue-100 border border-blue-300
         rounded-lg cursor-move hover:shadow-md hover:scale-105"
             >

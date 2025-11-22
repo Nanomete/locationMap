@@ -10,12 +10,21 @@ const dutyStore = (set, get) => ({
 
   fetchAll: async () => {
     try {
-      const personnel = await api.get("/personnel");
-      const locations = await api.get("/locations");
+      // const personnel = await api.get("/personnel");
+      // const locations = await api.get("/locations");
+      // const assigments = await api.get("/locationPersonnel")
+      
+      // ใช้เป็น array ในการเข้าถึงแทน และเวลา await ก็จะรอทีเดียวเลยไม่ต้องรอทีละบรรทัด
+      const [personnel, locations, assigments] = await Promise.all([
+        api.get("/personnel"),
+        api.get("/locations"),
+        api.get("/locationPersonnel"),
+      ])
       set({
         // set can assign key in global state
         personnel: personnel,
         locations: locations,
+        assigments: assigments
       });
     } catch (error) {
       console.log(error);
@@ -35,6 +44,19 @@ const dutyStore = (set, get) => ({
       console.log(error);
     }
   },
+
+  assignPerson: async (personId, locationId) => {
+    // fn body
+    try {
+      console.log(personId, locationId)
+      const res = await api.post('/locationPersonnel', {
+        personId:personId,
+        locationId:locationId,
+      })
+    } catch (error) {
+      console.log(error)
+    }
+  }
 });
 
 const useDutyStore = create(dutyStore);

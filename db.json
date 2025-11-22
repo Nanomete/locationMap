@@ -51,41 +51,6 @@
       "lat": 13.762937265148677,
       "lng": 100.50640046596529,
       "maxCapacity": 5
-    },
-    {
-      "id": "4379",
-      "name": "f",
-      "lat": 14.022520102037673,
-      "lng": 99.9785041809082,
-      "maxCapacity": 5
-    },
-    {
-      "id": "224a",
-      "name": "1212",
-      "lat": 14.010361924547446,
-      "lng": 100.01232147216797,
-      "maxCapacity": 5
-    },
-    {
-      "id": "0a9d",
-      "name": "ICE",
-      "lat": 14.021853917211544,
-      "lng": 99.97798919677736,
-      "maxCapacity": 5
-    },
-    {
-      "id": "1520",
-      "name": "test",
-      "lat": 14.020396631160562,
-      "lng": 99.97794628143312,
-      "maxCapacity": 5
-    },
-    {
-      "id": "f477",
-      "name": "En",
-      "lat": 14.02085463634538,
-      "lng": 99.97133731842042,
-      "maxCapacity": 5
     }
   ],
   "locationPersonnel": [
@@ -93,6 +58,16 @@
       "id": "72e8",
       "locationId": "952f",
       "personId": "2"
+    },
+    {
+      "id": "cfaa",
+      "personId": "1",
+      "locationId": "952f"
+    },
+    {
+      "id": "35cd",
+      "personId": "4",
+      "locationId": "8140"
     }
   ]
 }
